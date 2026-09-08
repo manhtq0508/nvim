@@ -5,7 +5,7 @@ return {
         "rafamadriz/friendly-snippets", -- snippet engines here
     },
     opts = {
-        snippet = { preset = "default" },
+        snippets = { preset = "default" },
         keymap = { preset = "default" },
         cmdline = {
             enabled = true,

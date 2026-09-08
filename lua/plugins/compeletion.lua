@@ -6,7 +6,7 @@ return {
     },
     opts = {
         snippet = { preset = "default" },
-        keymap = { preset = "super-tab" },
+        keymap = { preset = "default" },
         cmdline = {
             enabled = true,
             completion = {

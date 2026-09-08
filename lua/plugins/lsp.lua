@@ -1,11 +1,7 @@
 return {
     {
         "mason-org/mason-lspconfig.nvim",
-        opts = {
-            automatic_enable = {
-                exclude = { "stylua" },
-            },
-        },
+        opts = {},
         dependencies = {
             {
                 "mason-org/mason.nvim",
@@ -31,15 +27,17 @@ return {
                         "clangd",
                         "html",
                         "cssls",
+                        "ts_ls",
                         "emmet_ls",
                         "basedpyright",
-                        -- Formatters
+                        "ruff",
+
+                        -- Formatters / Linters
                         "stylua",
                         "goimports",
                         "csharpier",
                         "clang-format",
                         "prettier",
-                        "ruff",
                     },
                 },
             },
@@ -63,28 +61,24 @@ return {
                 capabilities = vim.tbl_deep_extend(
                     "force",
                     require("blink.cmp").get_lsp_capabilities(),
-                    { general = { positionEncodings = { "utf-8" } } }
-                ),
-            })
-
-            -- 2. Tắt hover của Ruff để nhường cho basedpyright (tránh trùng popup)
-            vim.lsp.config("ruff", {
-                capabilities = vim.tbl_deep_extend(
-                    "force",
-                    require("blink.cmp").get_lsp_capabilities(),
                     { general = { positionEncodings = { "utf-16" } } }
                 ),
-                on_attach = function(client)
-                    client.server_capabilities.hoverProvider = false
-                end,
             })
 
-            -- 3. Cấu hình độ nhạy của basedpyright
+            vim.lsp.config("ruff", {
+                init_options = {
+                    settings = {
+                        hover = false,
+                    },
+                },
+            })
+
             vim.lsp.config("basedpyright", {
                 settings = {
                     basedpyright = {
+                        disableOrganizeImports = true,
                         analysis = {
-                            typeCheckingMode = "standard", -- hoặc "basic"
+                            typeCheckingMode = "standard",
                         },
                     },
                 },

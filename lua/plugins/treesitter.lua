@@ -16,6 +16,7 @@ return {
             "tsx",
             "json",
             "bash",
+            "python",
         })
     end,
 }

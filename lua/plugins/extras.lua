@@ -1,0 +1,69 @@
+return {
+    {
+        "echasnovski/mini.indentscope",
+        event = { "BufReadPost", "BufNewFile" },
+        opts = { symbol = "│", options = { try_as_border = true } },
+    },
+    {
+        "brenoprata10/nvim-highlight-colors",
+        event = { "BufReadPost", "BufNewFile" },
+        opts = { render = "background" },
+    },
+    {
+        "nvim-mini/mini.surround",
+        event = { "BufReadPost", "BufNewFile" },
+        opts = {},
+    },
+    {
+        "folke/todo-comments.nvim",
+        event = { "BufReadPost", "BufNewFile" },
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {},
+    },
+    {
+        "abecodes/tabout.nvim",
+        event = "InsertEnter",
+        priority = 1000,
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        opts = {
+            tabkey = "<Tab>",
+            backwards_tabkey = "<S-Tab>",
+            act_as_tab = true,
+            act_as_shift_tab = false,
+            default_tab = "<C-t>",
+            default_shift_tab = "<C-d>",
+            enable_backwards = true,
+            completion = true,
+            tabouts = {
+                { open = "'", close = "'" },
+                { open = '"', close = '"' },
+                { open = "`", close = "`" },
+                { open = "(", close = ")" },
+                { open = "[", close = "]" },
+                { open = "{", close = "}" },
+            },
+            ignore_beginning = true,
+            exclude = {},
+        },
+    },
+    {
+        "nat-418/boole.nvim",
+        event = { "BufReadPost", "BufNewFile" },
+        opts = {
+            mappings = {
+                increment = "<C-a>",
+                decrement = "<C-x>",
+            },
+            additions = {
+                { "true", "false" },
+                { "True", "False" },
+                { "yes", "no" },
+                { "on", "off" },
+                { "enable", "disable" },
+                { "enabled", "disabled" },
+                { "left", "right" },
+                { "up", "down" },
+            },
+        },
+    },
+}

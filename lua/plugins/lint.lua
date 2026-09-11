@@ -8,7 +8,7 @@ return {
             go = { "golangcilint" },
         }
 
-        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {
             desc = "Trigger linting on save",
             callback = function()
                 if vim.bo.buftype == "" and vim.bo.modifiable then

@@ -1,22 +1,29 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    lazy = false,
-    build = ":TSUpdate",
+    {
+        "nvim-treesitter/nvim-treesitter",
+        branch = "main",
+        lazy = false,
+        build = ":TSUpdate",
 
-    config = function()
-        require("nvim-treesitter").install({
-            "go",
-            "c_sharp",
-            "cpp",
-            "html",
-            "css",
-            "javascript",
-            "typescript",
-            "tsx",
-            "json",
-            "bash",
-            "python",
-        })
-    end,
+        config = function()
+            require("nvim-treesitter").install({
+                "go",
+                "c_sharp",
+                "cpp",
+                "html",
+                "css",
+                "javascript",
+                "typescript",
+                "tsx",
+                "json",
+                "bash",
+                "python",
+            })
+        end,
+    },
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        event = "BufReadPost",
+        opts = {},
+    },
 }

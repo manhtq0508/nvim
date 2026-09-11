@@ -34,6 +34,7 @@ return {
 
                         -- Formatters / Linters
                         "stylua",
+                        "golangci-lint",
                         "goimports",
                         "csharpier",
                         "clang-format",
@@ -63,25 +64,6 @@ return {
                     require("blink.cmp").get_lsp_capabilities(),
                     { general = { positionEncodings = { "utf-16" } } }
                 ),
-            })
-
-            vim.lsp.config("ruff", {
-                init_options = {
-                    settings = {
-                        hover = false,
-                    },
-                },
-            })
-
-            vim.lsp.config("basedpyright", {
-                settings = {
-                    basedpyright = {
-                        disableOrganizeImports = true,
-                        analysis = {
-                            typeCheckingMode = "standard",
-                        },
-                    },
-                },
             })
 
             require("mason-lspconfig").setup(opts)

@@ -28,6 +28,7 @@ return {
                 "dockerfile",
                 "yaml",
                 "toml",
+                "diff",
             })
         end,
     },

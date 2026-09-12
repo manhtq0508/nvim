@@ -7,6 +7,17 @@ return {
     opts = {
         snippets = { preset = "default" },
         keymap = { preset = "default" },
+        signature = {
+            enabled = true,
+            trigger = {
+                enabled = true,
+                show_on_insert_on_trigger_character = true,
+            },
+            window = {
+                border = "rounded",
+                show_documentation = true,
+            },
+        },
         cmdline = {
             enabled = true,
             completion = {

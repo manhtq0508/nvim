@@ -16,7 +16,11 @@ return {
             javascriptreact = { "prettier" },
             typescriptreact = { "prettier" },
             json = { "prettier" },
+            jsonc = { "prettier" },
             python = { "ruff_organize_imports", "ruff_format" },
+            markdown = { "prettier" },
+            yaml = { "prettier" },
+            sh = { "shfmt" },
         },
         format_on_save = {
             timeout_ms = 500,

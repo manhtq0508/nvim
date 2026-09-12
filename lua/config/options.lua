@@ -120,3 +120,12 @@ vim.g.loaded_perl_provider = 0 -- skip Perl remote plugin provider
 -- =============================================================
 vim.opt.foldmethod = "indent" -- fold by indent
 vim.opt.foldlevel = 99 -- start with all folds open
+
+vim.filetype.add({
+    filename = {
+        ["docker-compose.yaml"] = "yaml.docker-compose",
+        ["docker-compose.yml"] = "yaml.docker-compose",
+        ["compose.yaml"] = "yaml.docker-compose",
+        ["compose.yml"] = "yaml.docker-compose",
+    },
+})

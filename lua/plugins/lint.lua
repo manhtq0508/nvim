@@ -6,6 +6,9 @@ return {
 
         lint.linters_by_ft = {
             go = { "golangcilint" },
+            dockerfile = { "hadolint" },
+            markdown = { "markdownlint-cli2" },
+            sh = { "shellcheck" },
         }
 
         vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {

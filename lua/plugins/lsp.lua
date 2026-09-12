@@ -10,6 +10,10 @@ return {
             {
                 "mason-org/mason.nvim",
                 opts = {
+                    registries = {
+                        "github:mason-org/mason-registry",
+                        "github:Crashdummyy/mason-registry",
+                    },
                     ui = {
                         icons = {
                             package_installed = "✓",
@@ -27,14 +31,23 @@ return {
                         -- LSP servers
                         "lua_ls",
                         "gopls",
-                        "csharp_ls",
+                        "roslyn",
                         "clangd",
                         "html",
                         "cssls",
                         "ts_ls",
+                        "eslint-lsp",
                         "emmet_ls",
                         "basedpyright",
                         "ruff",
+                        "marksman",
+                        "dockerls",
+                        "docker_compose_language_service",
+                        "taplo",
+                        "yamlls",
+                        "bashls",
+                        "jsonls",
+                        "rust-analyzer",
 
                         -- Formatters / Linters
                         "stylua",
@@ -43,6 +56,10 @@ return {
                         "csharpier",
                         "clang-format",
                         "prettier",
+                        "markdownlint-cli2",
+                        "hadolint",
+                        "shellcheck",
+                        "shfmt",
                     },
                 },
             },
@@ -72,5 +89,14 @@ return {
 
             require("mason-lspconfig").setup(opts)
         end,
+    },
+    {
+        "seblyng/roslyn.nvim",
+        ft = "cs",
+        ---@module 'roslyn.config'
+        ---@type RoslynNvimConfig
+        opts = {
+            -- your configuration comes here; leave empty for default settings
+        },
     },
 }

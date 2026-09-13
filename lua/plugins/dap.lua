@@ -10,16 +10,12 @@ return {
                 opts = {
                     handlers = {
                         python = function() end,
+                        delve = function() end,
+                        coreclr = function() end,
+                        codelldb = function() end,
                     },
-                    ensure_installed = { "python" }, -- ADAPTER name, not Mason
+                    ensure_installed = { "python", "delve", "coreclr", "codelldb" }, -- ADAPTER name, not Mason
                 },
-            },
-            {
-                "mfussenegger/nvim-dap-python",
-                config = function()
-                    local debugpyPath = vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python"
-                    require("dap-python").setup(debugpyPath)
-                end,
             },
         },
         keys = {

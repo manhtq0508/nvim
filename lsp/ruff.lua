@@ -1,7 +1,7 @@
 return {
-    init_options = {
-        settings = {
-            hover = false,
-        },
+  init_options = {
+    settings = {
+      hover = false,
     },
+  },
 }

@@ -29,8 +29,8 @@ vim.opt.inccommand = "split" -- live preview of :s substitutions in a split
 vim.opt.ignorecase = true -- case-insensitive search by default
 vim.opt.smartcase = true -- ...unless the search pattern has an uppercase letter
 if vim.fn.executable("rg") == 1 then
-    vim.opt.grepprg = "rg --vimgrep --smart-case" -- use ripgrep for :grep if available
-    vim.opt.grepformat = "%f:%l:%c:%m"
+  vim.opt.grepprg = "rg --vimgrep --smart-case" -- use ripgrep for :grep if available
+  vim.opt.grepformat = "%f:%l:%c:%m"
 end
 
 -- =============================================================
@@ -53,7 +53,7 @@ vim.opt.undofile = true -- enable undo history across sessions
 -- CLIPBOARD
 -- =============================================================
 vim.schedule(function()
-    vim.o.clipboard = "unnamedplus"
+  vim.o.clipboard = "unnamedplus"
 end) -- share system clipboard, deferred so it doesn't block startup
 
 -- =============================================================
@@ -122,10 +122,10 @@ vim.opt.foldmethod = "indent" -- fold by indent
 vim.opt.foldlevel = 99 -- start with all folds open
 
 vim.filetype.add({
-    filename = {
-        ["docker-compose.yaml"] = "yaml.docker-compose",
-        ["docker-compose.yml"] = "yaml.docker-compose",
-        ["compose.yaml"] = "yaml.docker-compose",
-        ["compose.yml"] = "yaml.docker-compose",
-    },
+  filename = {
+    ["docker-compose.yaml"] = "yaml.docker-compose",
+    ["docker-compose.yml"] = "yaml.docker-compose",
+    ["compose.yaml"] = "yaml.docker-compose",
+    ["compose.yml"] = "yaml.docker-compose",
+  },
 })

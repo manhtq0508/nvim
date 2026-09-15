@@ -1,10 +1,10 @@
 return {
-    settings = {
-        basedpyright = {
-            disableOrganizeImports = true,
-            analysis = {
-                typeCheckingMode = "standard",
-            },
-        },
+  settings = {
+    basedpyright = {
+      disableOrganizeImports = true,
+      analysis = {
+        typeCheckingMode = "standard",
+      },
     },
+  },
 }

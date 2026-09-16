@@ -40,41 +40,15 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
 
 -- native undotree
-vim.keymap.set("n", "<leader>u", function()
-  vim.cmd.packadd("nvim.undotree")
-  require("undotree").open()
-end, { desc = "Toggle Builtin Undotree" })
+-- vim.keymap.set("n", "<leader>u", function()
+--   vim.cmd.packadd("nvim.undotree")
+--   require("undotree").open()
+-- end, { desc = "Toggle Builtin Undotree" })
 
-vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Find files" })
-vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<cr>", { desc = "Find files" })
-vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua live_grep<cr>")
-vim.keymap.set("n", "<leader>fa", "<cmd>FzfLua lsp_code_actions<cr>")
+-- vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Find files" })
+-- vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<cr>", { desc = "Find files" })
+-- vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua live_grep<cr>")
+-- vim.keymap.set("n", "<leader>fa", "<cmd>FzfLua lsp_code_actions<cr>")
 
-local term_buf = nil
-local term_win = nil
-
-local function toggle_terminal()
-  if term_win and vim.api.nvim_win_is_valid(term_win) then
-    vim.api.nvim_win_hide(term_win)
-    term_win = nil
-    return
-  end
-
-  if not term_buf or not vim.api.nvim_buf_is_valid(term_buf) then
-    term_buf = vim.api.nvim_create_buf(false, true)
-    term_win = vim.api.nvim_open_win(term_buf, true, {
-      split = "below",
-      height = 15,
-    })
-    vim.fn.jobstart({ vim.o.shell }, { term = true })
-  else
-    term_win = vim.api.nvim_open_win(term_buf, true, {
-      split = "below",
-      height = 15,
-    })
-  end
-
-  vim.cmd("startinsert")
-end
-
-vim.keymap.set({ "n", "t" }, "<C-/>", toggle_terminal, { desc = "Toggle Terminal" })
+vim.keymap.set("n", "<leader>bx", "<cmd>bd<cr>", { silent = true, desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>m", "<cmd>messages<cr>", { silent = true, desc = "Open messages" })

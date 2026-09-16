@@ -1,10 +1,5 @@
 return {
   {
-    "echasnovski/mini.indentscope",
-    event = { "BufReadPost", "BufNewFile" },
-    opts = { symbol = "│", options = { try_as_border = true } },
-  },
-  {
     "brenoprata10/nvim-highlight-colors",
     event = { "BufReadPost", "BufNewFile" },
     opts = { render = "background" },
@@ -19,6 +14,22 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {},
+    keys = {
+      {
+        "<leader>ft",
+        function()
+          Snacks.picker.pick("todo_comments")
+        end,
+        desc = "Find todo",
+      },
+      {
+        "<leader>fT",
+        function()
+          Snacks.picker.pick("todo_comments", { keywords = { "TODO", "FIX", "FIXME" } })
+        end,
+        desc = "Find urgent todo",
+      },
+    },
   },
   {
     "abecodes/tabout.nvim",
@@ -68,6 +79,7 @@ return {
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown" },
     -- dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" }, -- if you use the mini.nvim suite
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.icons" }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons

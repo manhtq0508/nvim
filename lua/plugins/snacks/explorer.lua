@@ -7,7 +7,7 @@ return {
 
   keys = {
     {
-      "<leader>E",
+      "-",
       function()
         Snacks.explorer.reveal()
       end,

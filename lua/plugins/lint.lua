@@ -10,6 +10,7 @@ return {
       markdown = { "markdownlint-cli2" },
       sh = { "shellcheck" },
       cmake = { "cmakelint" },
+      tex = { "chktex" },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {

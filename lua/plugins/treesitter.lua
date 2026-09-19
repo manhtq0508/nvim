@@ -31,6 +31,7 @@ return {
         "toml",
         "diff",
         "cmake",
+        "latex",
       })
     end,
   },

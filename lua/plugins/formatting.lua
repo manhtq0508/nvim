@@ -22,6 +22,7 @@ return {
       yaml = { "prettier" },
       sh = { "shfmt" },
       cmake = { "gersemi" },
+      tex = { "latexindent" },
     },
     format_on_save = {
       timeout_ms = 500,

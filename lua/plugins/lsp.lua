@@ -49,6 +49,7 @@ return {
             "bashls",
             "jsonls",
             "rust-analyzer",
+            "neocmakelsp",
 
             -- Formatters / Linters
             "stylua",
@@ -61,6 +62,8 @@ return {
             "hadolint",
             "shellcheck",
             "shfmt",
+            "gersemi",
+            "cmakelint",
           },
         },
       },

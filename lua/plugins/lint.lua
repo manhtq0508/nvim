@@ -9,6 +9,7 @@ return {
       dockerfile = { "hadolint" },
       markdown = { "markdownlint-cli2" },
       sh = { "shellcheck" },
+      cmake = { "cmakelint" },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {

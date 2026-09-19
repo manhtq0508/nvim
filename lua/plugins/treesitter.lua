@@ -30,6 +30,7 @@ return {
         "yaml",
         "toml",
         "diff",
+        "cmake",
       })
     end,
   },

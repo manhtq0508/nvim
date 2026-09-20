@@ -14,8 +14,10 @@ return {
             delve = function() end,
             coreclr = function() end,
             codelldb = function() end,
+            bash = function() end,
+            js = function() end,
           },
-          ensure_installed = { "python", "delve", "coreclr", "codelldb" }, -- ADAPTER name, not Mason
+          ensure_installed = { "python", "delve", "coreclr", "codelldb", "bash", "js" }, -- ADAPTER name, not Mason
         },
       },
     },
@@ -113,6 +115,9 @@ return {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
+
+      require("plugins.dap.adapters.bash").setup()
+      require("plugins.dap.adapters.js").setup()
     end,
   },
 }

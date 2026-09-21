@@ -93,6 +93,62 @@ return {
       })
 
       require("mason-lspconfig").setup(opts)
+
+      Snacks.keymap.set("n", "gd", function()
+        Snacks.picker.lsp_definitions()
+      end, {
+        lsp = { method = "textDocument/definition" },
+        desc = "Goto Definition",
+      })
+      Snacks.keymap.set("n", "gD", function()
+        Snacks.picker.lsp_declarations()
+      end, {
+        lsp = { method = "textDocument/declaration" },
+        desc = "Goto Declaration",
+      })
+      Snacks.keymap.set("n", "grr", function()
+        Snacks.picker.lsp_references()
+      end, {
+        lsp = { method = "textDocument/references" },
+        desc = "References",
+      })
+      Snacks.keymap.set("n", "gri", function()
+        Snacks.picker.lsp_implementations()
+      end, {
+        lsp = { method = "textDocument/implementation" },
+        desc = "Implementation",
+      })
+      Snacks.keymap.set("n", "grt", function()
+        Snacks.picker.lsp_type_definitions()
+      end, {
+        lsp = { method = "textDocument/typeDefinition" },
+        desc = "Type Definition",
+      })
+      Snacks.keymap.set("n", "gO", function()
+        Snacks.picker.lsp_symbols()
+      end, {
+        lsp = { method = "textDocument/documentSymbol" },
+        desc = "Document Symbols",
+      })
+
+      Snacks.keymap.set("n", "K", vim.lsp.buf.hover, {
+        lsp = { method = "textDocument/hover" },
+        desc = "Hover Documentation",
+      })
+      Snacks.keymap.set({ "n", "x" }, "<leader>la", vim.lsp.buf.code_action, {
+        lsp = { method = "textDocument/codeAction" },
+        desc = "Code Action",
+      })
+      Snacks.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, {
+        lsp = { method = "textDocument/rename" },
+        desc = "Rename Symbol",
+      })
+      Snacks.keymap.set("n", "<leader>lf", function()
+        vim.lsp.buf.format({ async = true })
+      end, {
+        lsp = { method = "textDocument/formatting" },
+        desc = "Format Document",
+      })
     end,
   },
   {

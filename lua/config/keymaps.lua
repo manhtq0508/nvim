@@ -1,6 +1,6 @@
 vim.keymap.set("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked text" })
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
+vim.keymap.set({ "n", "v" }, "<localleader>d", [["_d]], { desc = "Delete without yanking" })
 
 vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "Quit edit mode quickly" })
 vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search highlighting", silent = true })
@@ -21,34 +21,27 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result cursor center
 
 vim.keymap.set(
   "n",
-  "<leader>s",
+  "<localleader>s",
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = "Replace word cursor is on globally" }
+  { desc = "Replace word cursor globally" }
 )
-vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true, desc = "makes file executable" })
+vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Makes file executable" })
 
-vim.keymap.set("n", "<leader>re", "<cmd>restart<cr>", { desc = "Restart config :restart)" })
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "Open file explorer" })
 
-vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "TEMP" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to above window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "TEMP" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "TEMP" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "TEMP" })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "TEMP" })
+vim.keymap.set("n", "<leader>bx", "<cmd>bd<cr>", { silent = true, desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>nm", "<cmd>messages<cr>", { silent = true, desc = "Open Neovim messages" })
 
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
+vim.keymap.set("n", "<localleader>q", "<cmd>q<cr>", { desc = "Quit Neovim" })
+vim.keymap.set("n", "<localleader>w", "<cmd>w<cr>", { desc = "Save file" })
 
 -- native undotree
 -- vim.keymap.set("n", "<leader>u", function()
 --   vim.cmd.packadd("nvim.undotree")
 --   require("undotree").open()
 -- end, { desc = "Toggle Builtin Undotree" })
-
--- vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Find files" })
--- vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<cr>", { desc = "Find files" })
--- vim.keymap.set("n", "<leader>fw", "<cmd>FzfLua live_grep<cr>")
--- vim.keymap.set("n", "<leader>fa", "<cmd>FzfLua lsp_code_actions<cr>")
-
-vim.keymap.set("n", "<leader>bx", "<cmd>bd<cr>", { silent = true, desc = "Delete buffer" })
-vim.keymap.set("n", "<leader>m", "<cmd>messages<cr>", { silent = true, desc = "Open messages" })

@@ -9,7 +9,7 @@ return {
 
   keys = {
     {
-      "<leader>n",
+      "<leader>nn",
       function()
         Snacks.notifier.show_history()
       end,

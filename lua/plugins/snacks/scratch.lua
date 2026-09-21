@@ -7,14 +7,14 @@ return {
 
   keys = {
     {
-      "<leader>.",
+      "<leader>..",
       function()
         Snacks.scratch()
       end,
       desc = "Toggle scratch",
     },
     {
-      "<leader>S",
+      "<leader>.s",
       function()
         Snacks.scratch.select()
       end,

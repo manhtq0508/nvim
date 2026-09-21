@@ -15,4 +15,28 @@ return {
     },
   },
   ---@diagnostic enable: missing-fields
+
+  keys = {
+    {
+      "<leader>FF",
+      function()
+        FzfLua.builtin()
+      end,
+      desc = "Open picker (FzfLua)",
+    },
+    {
+      "<leader>Ff",
+      function()
+        FzfLua.files()
+      end,
+      desc = "Find files",
+    },
+    {
+      "<leader>Fb",
+      function()
+        FzfLua.buffers()
+      end,
+      desc = "Find buffers",
+    },
+  },
 }

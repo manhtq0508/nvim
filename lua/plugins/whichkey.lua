@@ -4,6 +4,7 @@ return {
   opts = {
     preset = "helix",
     spec = {
+      { "<leader>a", group = "AI", icon = { icon = "󰚩", color = "blue" } },
       { "<leader>d", group = "Debug" },
       { "<leader>g", group = "Git" },
       { "<leader>n", group = "Notification", icon = { icon = "󰎟", hl = "DiagnosticWarn" } },

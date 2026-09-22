@@ -31,6 +31,7 @@ return {
         "diff",
         "cmake",
         "latex",
+        "rust",
       }
 
       require("nvim-treesitter").install(parsers)

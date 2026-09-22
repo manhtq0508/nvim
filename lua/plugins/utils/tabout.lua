@@ -5,7 +5,7 @@ return {
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   opts = {
     tabkey = "<Tab>",
-    backwards_tabkey = "<S-Tab>",
+    backwards_tabkey = "<C-Tab>",
     act_as_tab = true,
     act_as_shift_tab = false,
     default_tab = "<C-t>",

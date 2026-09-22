@@ -19,7 +19,7 @@
   "mini.icons": { "branch": "main", "commit": "e56797f90192d81f1fda02e662fc3e8e3d775027" },
   "mini.pairs": { "branch": "main", "commit": "4a014143fcb4e9df26198ccb3ecff3b9e77a048c" },
   "mini.statusline": { "branch": "main", "commit": "b5547f44560dae3ccd81f914256fa6f705837022" },
-  "mini.surround": { "branch": "main", "commit": "8d5d0c5aa92449368ac251e85451d79d8f69d296" },
+  "mini.surround": { "branch": "main", "commit": "33a2ebe5df8eb4751828fcba133e18ed0fbbdfab" },
   "nvim-dap": { "branch": "master", "commit": "cfa2d58f4537aca6ca83e2de1a0d9f1491121264" },
   "nvim-dap-cs": { "branch": "main", "commit": "16e5debe8cb7fb73c8799d20969ee00883586602" },
   "nvim-dap-go": { "branch": "main", "commit": "b4421153ead5d726603b02743ea40cf26a51ed5f" },

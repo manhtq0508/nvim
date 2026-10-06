@@ -81,6 +81,7 @@ vim.opt.winblend = 10 -- transparency for floating windows
 -- =============================================================
 vim.opt.list = true -- show invisible characters (tabs, trailing spaces)
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" } -- symbols used to render them
+vim.opt.fillchars:append({ eob = " " }) -- hide ~ end-of-buffer lines
 
 -- =============================================================
 -- RESPONSIVENESS / TIMING

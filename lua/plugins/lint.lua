@@ -4,13 +4,13 @@ return {
   config = function()
     local lint = require("lint")
 
-    local chktex = lint.linters.chktex
-    if type(chktex) == "function" then
-      chktex = chktex()
-    end
-    lint.linters.chktex = vim.tbl_deep_extend("force", chktex, {
-      ignore_exitcode = true,
-    })
+    -- local chktex = lint.linters.chktex
+    -- if type(chktex) == "function" then
+    --   chktex = chktex()
+    -- end
+    -- lint.linters.chktex = vim.tbl_deep_extend("force", chktex, {
+    --   ignore_exitcode = true,
+    -- })
 
     lint.linters_by_ft = {
       go = { "golangcilint" },
@@ -18,7 +18,7 @@ return {
       markdown = { "markdownlint-cli2" },
       sh = { "shellcheck" },
       cmake = { "cmakelint" },
-      tex = { "chktex" },
+      -- tex = { "chktex" },
     }
 
     vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost" }, {

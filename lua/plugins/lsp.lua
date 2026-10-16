@@ -50,7 +50,7 @@ return {
             "jsonls",
             "rust-analyzer",
             "neocmakelsp",
-            "texlab",
+            -- "texlab",
 
             -- Formatters / Linters
             "stylua",

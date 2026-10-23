@@ -22,6 +22,7 @@ require("lazy").setup({
     { import = "plugins.dap" },
     { import = "plugins.utils" },
     { import = "plugins.ai" },
+    { import = "plugins.formatting" },
   },
   install = { colorscheme = { "catppuccin-mocha", "habamax" } },
   checker = { enabled = true },

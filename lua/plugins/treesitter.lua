@@ -48,12 +48,23 @@ return {
 
       vim.api.nvim_create_autocmd("FileType", {
         pattern = ft_list,
-        callback = function()
-          if not vim.treesitter.highlighter.active[vim.api.nvim_get_current_buf()] then
+        callback = function(args)
+          if not vim.treesitter.highlighter.active[args.buf] then
             vim.treesitter.start()
           end
           vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+          local lang = vim.treesitter.language.get_lang(args.match) or args.match
+          local ok, query = pcall(vim.treesitter.query.get, lang, "indents")
+
+          if ok and query then
+            vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          else
+            vim.bo[args.buf].indentexpr = ""
+            if vim.tbl_contains({ "cs", "c", "cpp", "java", "javascript", "typescript" }, args.match) then
+              vim.bo[args.buf].cindent = true
+            end
+          end
         end,
       })
     end,

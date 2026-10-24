@@ -19,6 +19,7 @@ vim.opt.softtabstop = 4 -- columns inserted/removed when pressing Tab/Backspace
 vim.opt.shiftwidth = 4 -- width used by << / >> and auto-indent
 vim.opt.expandtab = true -- insert spaces instead of a real tab character
 vim.opt.wrap = false -- don't soft-wrap long lines
+vim.opt.autoindent = true -- copy indent from current line when starting a new line
 vim.opt.smartindent = true -- basic automatic indenting on new lines
 vim.opt.breakindent = true -- preserve indentation on wrapped lines (if wrap were on)
 
